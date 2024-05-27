@@ -1,0 +1,5 @@
+venv/
+Neuro/**
+database.db
+/Database/database.db
+.idea

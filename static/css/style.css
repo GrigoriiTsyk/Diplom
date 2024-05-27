@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.errorText {
+    color: red;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.head{
+    padding: 25px;
+    background-color:#0D6EFD;
+}
+
+.headerText{
+    line-height: 100px;
+    font-size: 30px;
+    color: white;
+}
+
+.listWithoutMarks{
+    list-style-type: none;
+}
