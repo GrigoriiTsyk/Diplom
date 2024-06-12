@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пациент</title>
+</head>
+<body>
+    <div class="container">
+        {% if diagnostic_image == False %}
+        diagnostic_image == False
+        <div class="col-sm">
+            <form action="/edit_patient/{{ id }}" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-sm">
+                        <input type=file name=file>
+                    </div>
+                    <div class="col-sm">
+                        <input type=submit value="Загрузить">
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% else %}
+            diagnostic_image == True
+            {% if image_path == None %}
+                <div class="col">Изображение отсутствует</div>
+            {% else %}
+            <div class="col-sm">
+                <div class="row">
+                    <img src="{{ image_path }}">
+                </div>
+                {% if diagnostic_result == None %}
+                    <div class="row">Результаты диагностики отсутствуют</div>
+                {% else %}
+                    <div class="row">Диагностика: {{ diagnostic_result }} </div>
+                {% endif %}
+                <div class="row">
+                    <form action="/edit_patient/{{ id }}" method="post" enctype="multipart/form-data">
+                        <div class="col-sm">
+                            <input type=file name=file>
+                        </div>
+                        <div class="col-sm">
+                            <input type="submit" value="Изменить">
+                        </div>
+                    </form>
+                    <div class="col-sm">
+                        <form action="/add_diagnostic/{{ id }}" method="post">
+                            <input type="submit" value="Диагностировать">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

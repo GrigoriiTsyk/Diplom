@@ -29,3 +29,7 @@ body {
 .listWithoutMarks{
     list-style-type: none;
 }
+
+.inputFile{
+    display: none;
+}
